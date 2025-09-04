@@ -149,8 +149,8 @@ if ($_POST && isset($_POST['contact_submit'])) {
               <?php echo htmlspecialchars($settings['hero_description'] ?? 'I am currently studying CSE in KUET. I am a competitive programmer who loves to solve problems and I\'m learning web development.'); ?>
             </p>
             <div class="hero-buttons">
-              <a href="#projects" class="btn btn-primary">
-                <i class="fas fa-briefcase"></i> View My Work
+              <a href="Farid_CV.pdf" class="btn btn-primary" download="Farid_Ahmed_Patwary_CV.pdf" target="_blank">
+                <i class="fas fa-download"></i> Download CV
               </a>
               <a href="#contact" class="btn btn-secondary">
                 <i class="fas fa-envelope"></i> Contact Info
