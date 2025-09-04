@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/includes/auth.php';
+require_once __DIR__ . '/../includes/auth.php';
 
 $auth = new Auth();
 $error = '';
@@ -15,7 +15,7 @@ $cookieOptions = [
 
 if (!$auth->isLoggedIn() && isset($_COOKIE['remember_token'])) {
     if ($auth->loginWithToken($_COOKIE['remember_token'])) {
-        header('Location: admin/');
+        header('Location: index.php');
         exit();
     } else {
 
@@ -24,7 +24,7 @@ if (!$auth->isLoggedIn() && isset($_COOKIE['remember_token'])) {
 }
 
 if ($auth->isLoggedIn()) {
-    header('Location: admin/');
+    header('Location: index.php');
     exit();
 }
 
@@ -40,7 +40,7 @@ if ($_POST && isset($_POST['login'])) {
             $auth->setRememberToken($token);
             setcookie('remember_token', $token, $cookieOptions);
         }
-        header('Location: admin/');
+        header('Location: index.php');
         exit();
     } else {
         $error = 'Invalid username or password';
@@ -222,7 +222,7 @@ if ($_POST && isset($_POST['login'])) {
         </form>
         
         <div class="back-home">
-            <a href="index.php"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+            <a href="../index.php"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
         </div>
     </div>
 </body>
